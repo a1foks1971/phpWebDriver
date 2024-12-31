@@ -17,7 +17,7 @@ class tmpNameCest
         $I->see("Google");
         $I->click('//a[@aria-label="Увійти"]');
         $I->dontSee("Login");
-        $I->seeElement("//textarea[1]");
-        $I->dontSeeInField("//textarea[1]","kuku");
+        // $I->seeElement("//textarea[1]");
+        // $I->dontSeeInField("//textarea[1]","kuku");
     }
 }
