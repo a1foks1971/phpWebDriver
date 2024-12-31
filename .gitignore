@@ -1,2 +1,4 @@
 /vendor/
 /.vscode/
+/_webdriver_binaries/
+# tests/_output/
