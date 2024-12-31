@@ -5,7 +5,7 @@ echo "Start delay"
 timeout /t 5
 echo "Start tests"
 cd ..
-php vendor/bin/codecept run "%1"
+php vendor/bin/codecept run "%1" --xml --html
 echo "Stop selenium server"
 taskkill /FI "WINDOWTITLE EQ SeleniumStandaloneServer" /f /t
 exit
