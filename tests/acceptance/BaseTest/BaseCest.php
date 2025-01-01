@@ -2,7 +2,7 @@
 namespace Tests\Acceptance\BaseTest;
 use AcceptanceTester;
 use Page\Acceptance\StartPage;
-require_once codecept_root_dir()."tests/_support/Page/Acceptance/StartPage.php";
+// require_once codecept_root_dir()."tests/_support/Page/Acceptance/StartPage.php";
 
 abstract class BaseCest
 {
