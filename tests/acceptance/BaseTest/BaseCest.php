@@ -6,6 +6,8 @@ use Page\Acceptance\StartPage;
 
 abstract class BaseCest
 {
+  function __construct() {}
+
   public function _before(AcceptanceTester $I)
   {
 

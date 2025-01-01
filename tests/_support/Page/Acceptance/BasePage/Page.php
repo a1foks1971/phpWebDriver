@@ -23,19 +23,13 @@ abstract class  Page
         return $this->URL.$param;
     }
 
-    /**
-     * @var \AcceptanceTester;
-     */
-    protected $I;
-
-    public function __construct(\AcceptanceTester $I,
+    public function __construct(
       $arrayParam = array(
         'url' => '',
         'title' => ''
       )
     )
     {
-        $this->I = $I;
         $this->URL = $arrayParam['url'];
         $this->title = $arrayParam['title'];
     }

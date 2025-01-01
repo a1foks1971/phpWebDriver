@@ -3,5 +3,5 @@ namespace Page\Acceptance\BasePage;
 
 interface ILogin
 {
-    public function login();
+    public function login(\AcceptanceTester $I);
 }
