@@ -1,3 +1,8 @@
+CODECEPTION DOCUMENTATION:
+https://codeception.com/quickstart
+
+========================================================================================
+
 TO RUN THE TEST LOCALLY
 Preconditions:
 - php must be installed
@@ -16,7 +21,8 @@ Preconditions:
 
 === B ===
 1. Clone the project and run the command in the folder console: "composer install"
-2.   - to run the "tests/acceptance/StartPageTests/verifyBeforeLoginCest.php" test run the batch with parameters:
+2. To run the "tests/acceptance/StartPageTests/verifyBeforeLoginCest.php" test, run the batch with parameters:
   runTest.bat tests/acceptance/StartPageTests/verifyBeforeLoginCest.php
 3. There will be reports in ./tests/_output
 
+========================================================================================
