@@ -13,7 +13,7 @@ class ProjectListSteps extends Steps
       $this->currPg = $this->projectsPg;
     }
 
-    public function chooseProjets(\AcceptanceTester $I, $projectName)
+    public function openProjet(\AcceptanceTester $I, $projectName)
     {
       //todo choosing the $projectName project
       $this->projectsPg->clickOnProjectWithIndex($I, 2);

@@ -13,7 +13,7 @@ class JobsSteps extends Steps
       $this->currPg = $this->jobsPg;
     }
 
-    public function addAutomationJob(\AcceptanceTester $I)
+    public function openAddJobDialog(\AcceptanceTester $I)
     {
       $this->jobsPg->waitForPageLoading($I);
       $this->jobsPg->clickOnAddAutomationJobBtn($I);

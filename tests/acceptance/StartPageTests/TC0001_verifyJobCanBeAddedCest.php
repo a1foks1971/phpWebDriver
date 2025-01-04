@@ -38,12 +38,11 @@ class TC0001_verifyJobCanBeAddedCest extends BaseCest
   // tests
   public function verifyJobCanBeAdded(AcceptanceTester $I)
   {
-      $this->auth->verifyIamOnPage($I);
-      $this->auth->loginWithTestmo($I);
+      $this->auth->chooseTestmoLoginMode($I);
       $this->login->loginWithTestmo($I, 'candidate_LA');
-      $this->projectList->chooseProjets($I, 'TestProject_1');
+      $this->projectList->openProjet($I, 'TestProject_1');
       $this->sideBarMenu->openJobPage($I);
-      $this->jobs->addAutomationJob($I);
+      $this->jobs->openAddJobDialog($I);
       $this->addJobDialog->addJob($I);
       $I->wait(30);
   }
