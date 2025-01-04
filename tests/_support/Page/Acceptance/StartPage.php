@@ -29,7 +29,7 @@ class StartPage extends Page
 
   public function clickLoginWithTestmo(\AcceptanceTester $I)
   {
-      $I->amGoingTo("Click on the link to login");
+      $I->amGoingTo("choose the TestMo login mode");
       $I->click($this->loginTestmoLink);
   }
 

@@ -20,14 +20,13 @@ class AddJobDialogBase extends Page
 
   public function setTarget(\AcceptanceTester $I, $targetName)
   {
-      $I->amGoingTo("Click on the 'Add Job' button");
-      $this->_setTarget($I, $this->targetDropdown, $targetName);
+    $this->_setTarget($I, $this->targetDropdown, $targetName);
   }
 
   private function _setTarget(\AcceptanceTester $I, IDropdown $dropdown, $targetName)
   {
-      $I->amGoingTo("Click on the 'Add Job' button");
-      $dropdown->selectByVisibleText($I, $targetName);
+    $I->amGoingTo("click on the 'Add Job' button");
+    $dropdown->selectByVisibleText($I, $targetName);
   }
 
 }

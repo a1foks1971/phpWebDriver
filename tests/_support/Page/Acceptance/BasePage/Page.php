@@ -47,12 +47,12 @@ abstract class  Page
 
     public function ensureIamOnPage(\AcceptanceTester $I)
     {
-        $I->amGoingTo("Verify I am on the '".$this->title."' page");
+        $I->amGoingTo("verify that I am on the '".$this->title."' page");
         $I->seeElement($this->container);
     }
 
       public function waitForPageLoading(\AcceptanceTester $I){
-        $I->amGoingTo("Wait for the '".$this->title."' page is loaded");
+        $I->amGoingTo("wait for the '".$this->title."' page is loaded");
         $I->waitForElement($this->container);
       }
 

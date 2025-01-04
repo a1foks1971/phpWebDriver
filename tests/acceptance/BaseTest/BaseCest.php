@@ -10,14 +10,12 @@ abstract class BaseCest
 
   public function _before(AcceptanceTester $I)
   {
-
-    // $I->assertTrue(true, "LOGBegin BaseCest/_before()");
     $I->maximizeWindow();
     $this->openSite($I);
-}
+  }
   protected function openSite(AcceptanceTester $I, $toUrl = ''){
     if ($toUrl === '') {$toUrl = StartPage::getStartPageUrl();}
-    $I->amGoingTo('Open the site');
+    $I->amGoingTo('open the site');
     $I->amOnUrl($toUrl);
   }
 

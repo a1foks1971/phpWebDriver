@@ -21,7 +21,7 @@ class Jobs extends Page
 
   public function clickOnAddAutomationJobBtn(\AcceptanceTester $I)
   {
-      $I->amGoingTo("Click on the '+ Automation job' button");
+      $I->amGoingTo("click on the '+ Automation job' button");
       $I->waitForElementClickable($this->addAutomationJobBtn);
       $I->click($this->addAutomationJobBtn);
   }

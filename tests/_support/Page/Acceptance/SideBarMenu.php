@@ -21,7 +21,7 @@ class SideBarMenu extends Page
 
   public function clickOnMenuOption_Job(\AcceptanceTester $I)
   {
-      $I->amGoingTo("Click on the 'Job' menu option");
+      $I->amGoingTo("click on the 'Job' menu option");
       $I->click($this->mnuOption_Job);
   }
 

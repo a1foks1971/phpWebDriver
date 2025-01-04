@@ -17,13 +17,13 @@ class Login extends Page implements ILogin
 
     public function login(\AcceptanceTester $I, $creds = array('email' => '', 'password'=> ''))
     {
-        $I->amGoingTo('Fill in the email field');
+        $I->amGoingTo('fill in the email field');
         assert($creds['email'] !== '');
         $I->fillField($this->email, $creds['email']);
-        $I->amGoingTo('Fill in the email field');
+        $I->amGoingTo('fill in the email field');
         assert($creds['password'] !== '');
         $I->fillField($this->pswInp, $creds['password']);
-        $I->amGoingTo('Click on the submit button');
+        $I->amGoingTo('click on the submit button');
         $I->click($this->submitBtn);
     }
 
