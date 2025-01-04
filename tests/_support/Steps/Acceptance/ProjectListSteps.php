@@ -16,7 +16,7 @@ class ProjectListSteps extends Steps
     public function openProjet(\AcceptanceTester $I, $projectName)
     {
       //todo choosing the $projectName project
-      $this->projectsPg->clickOnProjectWithIndex($I, 2);
+      $this->projectsPg->clickOnProjectWithIndex($I, 1);
     }
 
 }

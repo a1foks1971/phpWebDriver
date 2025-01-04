@@ -51,10 +51,10 @@ abstract class  Page
         $I->seeElement($this->container);
     }
 
-      public function waitForPageLoading(\AcceptanceTester $I){
-        $I->amGoingTo("wait for the '".$this->title."' page is loaded");
-        $I->waitForElement($this->container);
-      }
+    public function waitForPageLoading(\AcceptanceTester $I){
+      $I->amGoingTo("wait for the '".$this->title."' page is loaded");
+      $I->waitForElement($this->container);
+    }
 
 
 }

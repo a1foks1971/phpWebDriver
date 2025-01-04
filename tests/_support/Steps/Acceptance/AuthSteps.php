@@ -15,7 +15,7 @@ class AuthSteps extends Steps
 
     public function chooseTestmoLoginMode(\AcceptanceTester $I)
     {
-        $this->verifyIamOnPage($I);
+        $this->startPg->ensureIamOnPage($I);
         $this->startPg->clickLoginWithTestmo($I);
     }
 

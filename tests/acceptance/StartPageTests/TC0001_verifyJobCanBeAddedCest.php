@@ -2,7 +2,6 @@
 
 use Steps\Acceptance\AddJobSteps;
 use Steps\Acceptance\AuthSteps;
-use Steps\Acceptance\HeaderSteps;
 use Steps\Acceptance\JobsSteps;
 use Steps\Acceptance\LoginSteps;
 use Steps\Acceptance\ProjectListSteps;

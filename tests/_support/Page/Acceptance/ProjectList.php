@@ -29,7 +29,7 @@ class ProjectList extends Page
   public function clickOnProjectWithIndex(\AcceptanceTester $I, $index)
   {
       $I->amGoingTo("click on a project with index = ". $index);
-      $locator = $this->getCssOfProjWithIndex($index) . $this->prjNameLink_suffix;
+      $locator = $this->getCssOfProjWithIndex($index + 1) . $this->prjNameLink_suffix;
       $I->click($locator);
   }
 
