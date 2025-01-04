@@ -43,6 +43,6 @@ class TC0001_verifyJobCanBeAddedCest extends BaseCest
       $this->sideBarMenu->openJobPage($I);
       $this->jobs->openAddJobDialog($I);
       $this->addJobDialog->addJob($I);
-      $I->wait(30);
+      $I->wait(10);
   }
 }

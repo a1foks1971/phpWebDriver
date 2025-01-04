@@ -21,6 +21,7 @@ class Login extends Page implements ILogin
         $I->fillField($this->email, $creds['email']);
         $I->amGoingTo('fill in the password field');
         $I->fillField($this->pswInp, $creds['password']);
+        $I->wait(5);
         $I->amGoingTo('click on the submit button');
         $I->click($this->submitBtn);
     }
