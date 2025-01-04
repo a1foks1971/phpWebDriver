@@ -6,24 +6,7 @@ abstract class  Page
     // include url of current page
     protected $URL = '';
     protected $title = '';
-
     protected $container = 'body';
-
-    /**
-     * Declare UI map for this page here. CSS or XPath allowed.
-     * public static $usernameField = '#username';
-     * public static $formSubmitButton = "#mainForm input[type=submit]";
-     */
-
-    /**
-     * Basic route example for your current URL
-     * You can append any additional parameter to URL
-     * and use it in tests like: Page\Edit::route('/123-post');
-     */
-    public function route($param)
-    {
-        return $this->URL.$param;
-    }
 
     public function __construct(
       $arrayParam = array(
@@ -32,8 +15,12 @@ abstract class  Page
       )
     )
     {
+      if (array_key_exists('url', $arrayParam)) {
         $this->URL = $arrayParam['url'];
+      }
+      if (array_key_exists('title', $arrayParam)) {
         $this->title = $arrayParam['title'];
+      }
     }
 
     public function getURL()
@@ -64,6 +51,10 @@ abstract class  Page
         $I->seeElement($this->container);
     }
 
+      public function waitForPageLoading(\AcceptanceTester $I){
+        $I->amGoingTo("Wait for the '".$this->title."' page is loaded");
+        $I->waitForElement($this->container);
+      }
 
 
 }

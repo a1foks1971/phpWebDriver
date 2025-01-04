@@ -1,21 +1,22 @@
 <?php
 namespace Steps\Acceptance;
 
-use Page\Acceptance\Projects;
+use Page\Acceptance\ProjectList;
 use Steps\Acceptance\BaseStep\Steps;
 
-class ProjectsSteps extends Steps
+class ProjectListSteps extends Steps
 {
   protected $projectsPg;
   public function __construct()
     {
-      $this->projectsPg = new Projects();
+      $this->projectsPg = new ProjectList();
       $this->currPg = $this->projectsPg;
     }
 
     public function chooseProjets(\AcceptanceTester $I, $projectName)
     {
-        $this->projectsPg->clickOnProjectWithIndex($I, 1);
+      //todo choosing the $projectName project
+      $this->projectsPg->clickOnProjectWithIndex($I, 2);
     }
 
 }
