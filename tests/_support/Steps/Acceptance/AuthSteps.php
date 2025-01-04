@@ -6,21 +6,16 @@ use Steps\Acceptance\BaseStep\Steps;
 
 class AuthSteps extends Steps
 {
-    protected $authPg;
+    protected $startPg;
     public function __construct()
     {
-        parent::__construct();
-        $this->authPg = new StartPage();
-    }
-
-    public function verifyIamOnPage(\AcceptanceTester $I)
-    {
-        $this->authPg->ensureIamOnPage($I);
+        $this->startPg = new StartPage();
+        $this->currPg = $this->startPg;
     }
 
     public function loginWithTestmo(\AcceptanceTester $I)
     {
-        $this->authPg->clickLoginWithTestmo($I);
+        $this->startPg->clickLoginWithTestmo($I);
     }
 
 }

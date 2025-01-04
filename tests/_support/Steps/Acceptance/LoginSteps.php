@@ -7,22 +7,22 @@ use Utilits\Utilits;
 
 class LoginSteps extends Steps
 {
-    protected $loginPg;
-    public function __construct()
+  private $login;
+  public function __construct()
     {
-        parent::__construct();
-        $this->loginPg = new Login();
-    }
-
-    public function verifyIamOnPage(\AcceptanceTester $I)
-    {
-        $this->loginPg->ensureIamOnPage($I);
+      $this->login = new Login();
+      $this->currPg = $this->login;
     }
 
     public function loginWithTestmo(\AcceptanceTester $I, $userName)
     {
       $creds = Utilits::getTestmoCreds( $userName);
-      $this->loginPg->login($I, array("email"=>$creds['email'], "password"=>$creds['password'] ));
+      $this->login->login($I,
+        array(
+          "email"=>$creds['email'],
+          "password"=>$creds['password']
+        )
+      );
     }
 
 }
