@@ -1,16 +1,17 @@
 <?php
 
+use Steps\Acceptance\AuthSteps;
 use Steps\Acceptance\HeaderSteps;
 use Tests\Acceptance\BaseTest\BaseCest;
 require_once codecept_root_dir()."tests/acceptance/BaseTest/BaseCest.php";
 
-class verifyBeforeLoginCest extends BaseCest
+class TC0001_verifyJobCanBeAddedCest extends BaseCest
 {
-  protected $headerStep;
+  protected $authStep;
   public function __construct()
   {
     parent::__construct();
-    $this->headerStep = new HeaderSteps();
+    $this->authStep = new AuthSteps();
   }
   public function _before(AcceptanceTester $I)
   {
@@ -19,12 +20,8 @@ class verifyBeforeLoginCest extends BaseCest
 
 
   // tests
-  public function verifyUI(AcceptanceTester $I)
+  public function verifyJobCanBeAdded(AcceptanceTester $I)
   {
-      $I->see("6pm");
-  }
-  public function ensureIcanOpenLoginPage(AcceptanceTester $I)
-  {
-      $this->headerStep->verifyIcon_MyAccount($I);
+      $this->authStep->verifyIamOnPage($I);
   }
 }

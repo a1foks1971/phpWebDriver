@@ -7,6 +7,8 @@ abstract class  Page
     protected $URL = '';
     protected $title = '';
 
+    protected $container = 'body';
+
     /**
      * Declare UI map for this page here. CSS or XPath allowed.
      * public static $usernameField = '#username';
@@ -55,5 +57,13 @@ abstract class  Page
       $this->title = $title;
       return $this->title;
     }
+
+    public function ensureIamOnPage(\AcceptanceTester $I)
+    {
+        $I->amGoingTo("Verify I am on the '".$this->title."' page");
+        $I->seeElement($this->container);
+    }
+
+
 
 }

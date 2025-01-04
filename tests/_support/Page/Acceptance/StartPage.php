@@ -5,29 +5,32 @@ use Page\Acceptance\BasePage\Page;
 
 class StartPage extends Page
 {
-  const WWW_6PM_DOT_COM = "https://www.6pm.com/";
-  const SIX_PM = "6pm";
+  const HTTPS_SJPKNIGHT_TESTMO_AUTH = "https://sjpknight.testmo.net/auth";
 
-  private static $css = [
-    'container' => '[name="signIn"]',
-    'email' => 'input#ap_email',
-    'pswInp' => 'input#ap_password',
-    'submitBtn' => '#signInSubmit',
-  ];
+  const TESTMO_AUTH = "Testmo Auth";
+  protected $container = '.page-auth';
+
+  private $loginTestmoLink = "//div[@class='auth-method-select__text' and contains(., 'Testmo')]";
 
   public static function getStartPageUrl(): string
   {
-    return self::WWW_6PM_DOT_COM;
+    return self::HTTPS_SJPKNIGHT_TESTMO_AUTH;
   }
 
   public function __construct()
   {
     parent::__construct(
         [
-            'url' => self::WWW_6PM_DOT_COM,
-            'title' => self::SIX_PM,
+            'url' => self::HTTPS_SJPKNIGHT_TESTMO_AUTH,
+            'title' => self::TESTMO_AUTH,
         ]
     );
+  }
+
+  public function clickLoginWithTestmo(\AcceptanceTester $I)
+  {
+      $I->amGoingTo("Click on the link to login");
+      $I->click($this->loginTestmoLink);
   }
 
 }
