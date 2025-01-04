@@ -1,7 +1,9 @@
 <?php
 
+use Steps\Acceptance\AddJobSteps;
 use Steps\Acceptance\AuthSteps;
 use Steps\Acceptance\HeaderSteps;
+use Steps\Acceptance\JobsSteps;
 use Steps\Acceptance\LoginSteps;
 use Steps\Acceptance\ProjectListSteps;
 use Steps\Acceptance\SideBarSteps;
@@ -14,6 +16,9 @@ class TC0001_verifyJobCanBeAddedCest extends BaseCest
   protected $login;
   protected $projectList;
   protected $sideBarMenu;
+  protected $jobs;
+  protected $addJobDialog
+  ;
   public function __construct()
   {
     parent::__construct();
@@ -21,6 +26,8 @@ class TC0001_verifyJobCanBeAddedCest extends BaseCest
     $this->login = new LoginSteps();
     $this->projectList = new ProjectListSteps();
     $this->sideBarMenu = new SideBarSteps();
+    $this->jobs = new JobsSteps();
+    $this->addJobDialog = new AddJobSteps();
   }
   public function _before(AcceptanceTester $I)
   {
@@ -36,6 +43,8 @@ class TC0001_verifyJobCanBeAddedCest extends BaseCest
       $this->login->loginWithTestmo($I, 'candidate_LA');
       $this->projectList->chooseProjets($I, 'TestProject_1');
       $this->sideBarMenu->openJobPage($I);
+      $this->jobs->addAutomationJob($I);
+      $this->addJobDialog->addJob($I);
       $I->wait(30);
   }
 }
