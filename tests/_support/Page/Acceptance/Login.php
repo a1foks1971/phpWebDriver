@@ -5,12 +5,10 @@ use Page\Acceptance\BasePage\Page;
 
 class Login extends Page implements ILogin
 {
-    private static $css = array(
-        'container' => '[name="signIn"]',
-        'email' => 'input#ap_email',
-        'pswInp' => 'input#ap_password',
-        'submitBtn' => '#signInSubmit'
-    );
+    protected $container = '.page-auth';
+    private $email = 'input[placeholder="Email"]';
+    private $pswInp = 'input[placeholder="Password"]';
+    private $submitBtn = 'button[type="submit"]';
 
     public function __construct()
     {
@@ -19,18 +17,14 @@ class Login extends Page implements ILogin
 
     public function login(\AcceptanceTester $I, $creds = array('email' => '', 'password'=> ''))
     {
-        $I->seeElement(self::$css['container']);
+        $I->amGoingTo('Fill in the email field');
         assert($creds['email'] !== '');
-        $I->fillField(self::$css['email'], $creds['email']);
+        $I->fillField($this->email, $creds['email']);
+        $I->amGoingTo('Fill in the email field');
         assert($creds['password'] !== '');
-        $I->fillField(self::$css['pswInp'], $creds['password']);
-        $I->click(self::$css['submitBtn']);
-    }
-
-    public function verifyLoginIsOpened(\AcceptanceTester $I, )
-    {
-        $I->amGoingTo('Verify that the "Login" page is opened');
-        $I->seeElement(self::$css['container']);
+        $I->fillField($this->pswInp, $creds['password']);
+        $I->amGoingTo('Click on the submit button');
+        $I->click($this->submitBtn);
     }
 
 }

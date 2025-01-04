@@ -2,3 +2,4 @@
 /.vscode/
 # /_webdriver_binaries/
 tests/_output/
+tests/_data/testmo_creds.json

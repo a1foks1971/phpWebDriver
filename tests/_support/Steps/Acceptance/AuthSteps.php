@@ -18,4 +18,9 @@ class AuthSteps extends Steps
         $this->authPg->ensureIamOnPage($I);
     }
 
+    public function loginWithTestmo(\AcceptanceTester $I)
+    {
+        $this->authPg->clickLoginWithTestmo($I);
+    }
+
 }
