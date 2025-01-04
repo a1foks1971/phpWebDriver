@@ -7,6 +7,8 @@ TO RUN THE TEST LOCALLY
 Preconditions:
 - php must be installed
 - composer must be installed
+- ask the customer to send a json file with needed credentials
+- paste the got 'testmo_creds.json' file into the "tests/_data/" folder
 
 === A ===
 1. Clone the project and run the command in the folder console: "composer install"
