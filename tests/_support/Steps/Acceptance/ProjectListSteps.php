@@ -3,6 +3,7 @@ namespace Steps\Acceptance;
 
 use Page\Acceptance\ProjectList;
 use Steps\Acceptance\BaseStep\Steps;
+use Utilits\Utilits;
 
 class ProjectListSteps extends Steps
 {
@@ -13,10 +14,10 @@ class ProjectListSteps extends Steps
       $this->currPg = $this->projectsPg;
     }
 
-    public function openProject(\AcceptanceTester $I, $projectName)
+    public function openProject(\AcceptanceTester $I, $projectId)
     {
-      //todo choosing the $projectName project
-      $this->projectsPg->clickOnProjectWithIndex($I, 1);
+      $prj = Utilits::getTestmoProjects( $projectId);
+      $this->projectsPg->clickOnProjectWithName($I, $prj['name']);
     }
 
 }

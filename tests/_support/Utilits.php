@@ -24,6 +24,13 @@ class Utilits
     return $config[$username];
   }
 
+  public static function  getTestmoProjects($projectId)
+  {
+    $configFile = './tests/_data/testmo_projects.json';
+    $config = self::getFromJSON($configFile);
+    return $config[$projectId];
+  }
+
 
 
 }
