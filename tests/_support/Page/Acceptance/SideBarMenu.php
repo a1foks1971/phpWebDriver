@@ -14,7 +14,7 @@ class SideBarMenu extends Page
   {
     parent::__construct(
         [
-            'title' => 'SideBar Menu',
+          parent::TITLE => 'SideBar Menu',
         ]
     );
   }

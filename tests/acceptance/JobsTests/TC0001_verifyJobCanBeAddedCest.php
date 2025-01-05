@@ -1,48 +1,29 @@
 <?php
 
-use Steps\Acceptance\AddJobSteps;
-use Steps\Acceptance\AuthSteps;
-use Steps\Acceptance\JobsSteps;
-use Steps\Acceptance\LoginSteps;
-use Steps\Acceptance\ProjectListSteps;
-use Steps\Acceptance\SideBarSteps;
-use Tests\Acceptance\BaseTest\BaseCest;
-require_once codecept_root_dir()."tests/acceptance/BaseTest/BaseCest.php";
+use Page\Acceptance\AddJobDialog;
 
-class TC0001_verifyJobCanBeAddedCest extends BaseCest
+require_once codecept_root_dir()."tests/acceptance/JobsTests/JobsTestsBase/verifyJobsBase.php";
+
+class TC0001_verifyJobCanBeAddedCest extends verifyJobsBase
 {
-  protected $auth;
-  protected $login;
-  protected $projectList;
-  protected $sideBarMenu;
-  protected $jobs;
-  protected $addJobDialog
-  ;
-  public function __construct()
-  {
-    parent::__construct();
-    $this->auth = new AuthSteps();
-    $this->login = new LoginSteps();
-    $this->projectList = new ProjectListSteps();
-    $this->sideBarMenu = new SideBarSteps();
-    $this->jobs = new JobsSteps();
-    $this->addJobDialog = new AddJobSteps();
-  }
   public function _before(AcceptanceTester $I)
   {
     parent::_before($I);
+    $this->goToAddJobDialog($I, array(
+      parent::CANDIDATE => parent::ADVANCED_USER_1,
+      parent::TEST_PROJECT_ID => parent::TEST_PRJ_1,
+    ));
   }
 
-
-  // tests
-  public function verifyJobCanBeAdded(AcceptanceTester $I)
+  public function verifyGithubJobCanBeAdded(AcceptanceTester $I)
   {
-      $this->auth->chooseTestmoLoginMode($I);
-      $this->login->loginWithTestmo($I, 'candidate_LA');
-      $this->projectList->openProjet($I, 'TestProject_1');
-      $this->sideBarMenu->openJobPage($I);
-      $this->jobs->openAddJobDialog($I);
-      $this->addJobDialog->addJob($I);
+      $this->addJobDialog->addJob($I, AddJobDialog::GIT_HUB_TARGET);
+      $I->wait(10);
+  }
+
+  public function verifyGitlabJobCanBeAdded(AcceptanceTester $I)
+  {
+      $this->addJobDialog->addJob($I, AddJobDialog::GIT_LAB_TARGET);
       $I->wait(10);
   }
 }

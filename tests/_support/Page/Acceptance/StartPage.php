@@ -21,8 +21,8 @@ class StartPage extends Page
   {
     parent::__construct(
         [
-            'url' => self::HTTPS_SJPKNIGHT_TESTMO_AUTH,
-            'title' => self::TESTMO_AUTH,
+          parent::URL => self::HTTPS_SJPKNIGHT_TESTMO_AUTH,
+          parent::TITLE => self::TESTMO_AUTH,
         ]
     );
   }

@@ -13,9 +13,9 @@ class AddJobSteps extends Steps
       $this->currPg = $this->addJobDialogPg;
     }
 
-    public function addJob(\AcceptanceTester $I)
+    public function addJob(\AcceptanceTester $I, $target)
     {
-      $this->addJobDialogPg->setTarget($I, 'GitHub (GitHub)');
+      $this->addJobDialogPg->setTarget($I, $target);
     }
 
 }

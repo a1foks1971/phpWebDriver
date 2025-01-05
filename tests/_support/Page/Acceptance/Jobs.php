@@ -14,7 +14,7 @@ class Jobs extends Page
   {
     parent::__construct(
         [
-            'title' => 'Jobs',
+          parent::TITLE => 'Jobs',
         ]
     );
   }

@@ -8,18 +8,21 @@ abstract class  Page
     protected $title = '';
     protected $container = 'body';
 
+    const URL = 'url';
+    const TITLE = 'title';
+
     public function __construct(
       $arrayParam = array(
-        'url' => '',
-        'title' => ''
+        self::URL => '',
+        self::TITLE => ''
       )
     )
     {
-      if (array_key_exists('url', $arrayParam)) {
-        $this->URL = $arrayParam['url'];
+      if (array_key_exists(self::URL, $arrayParam)) {
+        $this->URL = $arrayParam[self::URL];
       }
-      if (array_key_exists('title', $arrayParam)) {
-        $this->title = $arrayParam['title'];
+      if (array_key_exists(self::TITLE, $arrayParam)) {
+        $this->title = $arrayParam[self::TITLE];
       }
     }
 

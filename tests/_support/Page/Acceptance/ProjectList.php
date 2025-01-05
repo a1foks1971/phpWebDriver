@@ -15,8 +15,8 @@ class ProjectList extends Page
   {
     parent::__construct(
         [
-            'url' => "https://sjpknight.testmo.net",
-            'title' => "Projects",
+          parent::URL => "https://sjpknight.testmo.net",
+          parent::TITLE => "Projects",
         ]
     );
   }

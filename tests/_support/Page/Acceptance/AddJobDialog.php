@@ -5,6 +5,9 @@ use Page\Acceptance\PageElements\Dropdown;
 
 class AddJobDialog extends AddJobDialogBase
 {
+  const GIT_HUB_TARGET = "GitHub (GitHub)";
+  const GIT_LAB_TARGET = "GitLab (GitLab)";
+
   public function __construct()
   {
     $dropdown = new Dropdown(

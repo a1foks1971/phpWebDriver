@@ -12,7 +12,7 @@ class AddJobDialogBase extends Page
   {
     parent::__construct(
         [
-            'title' => 'Add Job Dialog',
+            parent::TITLE => 'Add Job Dialog',
         ]
     );
     $this->targetDropdown = $dropdown;
