@@ -2,7 +2,7 @@ CODECEPTION DOCUMENTATION:
 
 https://codeception.com/quickstart
 
-========================================================================================
+====================================================
 
 TO RUN THE TEST LOCALLY
 
@@ -26,7 +26,8 @@ Preconditions:
 === B ===
 1. Clone the project and run the command in the folder console: "composer install"
 2. To run the "tests/acceptance/JobsTests/TC0001_verifyJobCanBeAddedCest" test,
-  2.1. Add the test into this array in testIdToPath.php (if it has not been added yet):
+  2.1. Add the test into this array in testIdToPath.php
+    (if it has not been added yet):
     $cases = array(
         "TC0001" => "tests/acceptance/JobsTests/TC0001_verifyJobCanBeAddedCest.php",
     );
@@ -35,7 +36,7 @@ Preconditions:
   (The script starts the selenium server, runs the test and stops the server)
 3. There will be reports in ./tests/_output
 
-========================================================================================
+====================================================
 
 REPORTS
 
@@ -45,4 +46,4 @@ All reports are in ./tests/_output folder
 3. folders /record_* - like video for failed tests (watch index.html inside the folder)
 4. *.png - screenshots for failed tests
 
-========================================================================================
+====================================================
