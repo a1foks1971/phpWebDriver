@@ -19,8 +19,8 @@ class LoginSteps extends Steps
       $creds = Utilits::getTestmoCreds( $userName);
       $this->login->login($I,
         array(
-          "email" => $creds['email'],
-          "password" => $creds['password']
+          Login::EMAIL => $creds[Login::EMAIL],
+          Login::PASSWORD => $creds[Login::PASSWORD]
         )
       );
     }

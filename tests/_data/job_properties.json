@@ -1,0 +1,10 @@
+{
+  "GitHub":{
+    "Connection": "GitHub",
+    "Execution": "GitHub"
+  },
+  "GitLab":{
+    "Connection": "sjpknight Gitlab",
+    "Execution": "GitLab"
+  }
+}

@@ -13,9 +13,12 @@ class AddJobSteps extends Steps
       $this->currPg = $this->addJobDialogPg;
     }
 
-    public function addJob(\AcceptanceTester $I, $target)
+    public function addJob(\AcceptanceTester $I, $jobType)
     {
+      $target = $this->addJobDialogPg->getTarget($jobType);
       $this->addJobDialogPg->setTarget($I, $target);
+      $this->addJobDialogPg->clickOnAddJobButton($I);
+      $this->addJobDialogPg->waitForPageClosing($I);
     }
 
 }

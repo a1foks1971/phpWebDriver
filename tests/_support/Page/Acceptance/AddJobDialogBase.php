@@ -7,6 +7,7 @@ use Page\Acceptance\PageElements\BaseElements\IDropdown;
 class AddJobDialogBase extends Page
 {
   protected $container = '.dialog--compact';
+  protected $addJobBtn = '[data-target="submitButton"]';
   private $targetDropdown;
   public function __construct(IDropdown $dropdown)
   {
@@ -25,8 +26,13 @@ class AddJobDialogBase extends Page
 
   private function _setTarget(\AcceptanceTester $I, IDropdown $dropdown, $targetName)
   {
-    $I->amGoingTo("click on the 'Add Job' button");
+    $I->amGoingTo("select the '".$targetName."' target");
     $dropdown->selectByVisibleText($I, $targetName);
+  }
+  public function clickOnAddJobButton(\AcceptanceTester $I)
+  {
+    $I->amGoingTo("click on the 'Add Job' button");
+    $I->click($this->addJobBtn);
   }
 
 }

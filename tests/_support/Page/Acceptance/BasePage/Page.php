@@ -59,5 +59,10 @@ abstract class  Page
       $I->waitForElement($this->container);
     }
 
+    public function waitForPageClosing(\AcceptanceTester $I){
+      $I->amGoingTo("wait for the '".$this->title."' page is closed");
+      $I->waitForElementNotVisible($this->container);
+    }
+
 
 }
