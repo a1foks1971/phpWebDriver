@@ -40,8 +40,10 @@ Preconditions:
     );
 
   2.2. run the batch with the parameter:
+
   ./runTest.bat TC0001
-  (The script starts the selenium server, runs the test and stops the server)
+
+  The script starts the selenium server, runs the test and stops the server
 
 3. There will be reports in ./tests/_output
 
